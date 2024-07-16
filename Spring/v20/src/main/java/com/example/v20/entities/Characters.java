@@ -19,7 +19,7 @@ public class Characters {
     private String concept;
     private String demeanor;
     private int generation;
-    private int npc;
+    private int npc; //1 npc 0 pc
     private String backstory;
 
     public Characters(){
