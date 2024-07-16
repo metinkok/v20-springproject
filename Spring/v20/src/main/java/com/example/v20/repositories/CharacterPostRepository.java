@@ -24,5 +24,5 @@ public interface CharacterPostRepository extends CrudRepository<CharacterPosts, 
 
     @Transactional@Modifying
     @Query(value = "INSERT INTO CHARACTER_POSTS (characterId, postId) VALUES (:characterId, :postId)", nativeQuery = true)
-    void insertCharacterDiscipline(@Param("characterId") int characterId, @Param("postId") int postId);
+    void insertCharacterPost(@Param("characterId") int characterId, @Param("postId") int postId);
 }
