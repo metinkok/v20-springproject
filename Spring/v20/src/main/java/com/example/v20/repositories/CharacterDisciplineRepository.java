@@ -26,4 +26,8 @@ public interface CharacterDisciplineRepository extends CrudRepository<CharacterD
     @Transactional@Modifying
     @Query(value = "INSERT INTO CHARACTERDISCIPLINE (characterId, disciplineId, points) VALUES (:characterId, :disciplineId, :points)", nativeQuery = true)
     void insertCharacterDiscipline(@Param("characterId") int characterId, @Param("disciplineId") int disciplineId, @Param("points") int points);
+
+    @Modifying
+    @Query(value = "DELETE FROM CHARACTERDISCIPLINE WHERE CHARACTERID = :characterId", nativeQuery = true)
+    void deleteCharacterDiscipline(@Param("characterId") int characterId);
 }
