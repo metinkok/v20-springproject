@@ -27,6 +27,14 @@ public interface BloodhuntRepository extends CrudRepository<Bloodhunt, Integer>{
     @Query(value = "INSERT INTO BLOODHUNT (cities, characterId, redlist) VALUES (:cities, :characterId, :redlist)", nativeQuery = true)
     void insertBloodhunt(@Param("cities") String cities, @Param("characterId") int characterId, @Param("redlist") int redlist);
 
+    @Transactional@Modifying
+    @Query(value = "UPDATE BLOODHUNT SET CITIES = :cities WHERE CHARACTERID = :characterId)", nativeQuery = true)
+    void updateCities(@Param("cities") String cities, @Param("characterId") int characterId);
+
+    @Transactional@Modifying
+    @Query(value = "UPDATE BLOODHUNT SET REDLIST = :redlist WHERE CHARACTERID = :characterId)", nativeQuery = true)
+    void updateRedList(@Param("redlist") int redlist, @Param("characterId") int characterId);
+
     @Modifying
     @Query(value = "DELETE FROM BLOODHUNT WHERE ID = :id", nativeQuery = true)
     void deleteBloodhunt(@Param("id") int id);
