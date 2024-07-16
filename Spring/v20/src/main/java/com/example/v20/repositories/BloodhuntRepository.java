@@ -20,6 +20,9 @@ public interface BloodhuntRepository extends CrudRepository<Bloodhunt, Integer>{
     @Query(value = "SELECT * FROM BLOODHUNT WHERE CITIES like %:city%", nativeQuery = true)
     List<Bloodhunt> getByCity(@Param("city") String city);
 
+    @Query(value = "SELECT * FROM BLOODHUNT WHERE CHARACTERID = :characterId", nativeQuery = true)
+    List<Bloodhunt> getByCharacter(@Param("characterId") int characterId);
+
     @Query(value = "SELECT * FROM BLOODHUNT WHERE REDLIST = 1", nativeQuery = true)
     List<Bloodhunt> getRedlist();
 
