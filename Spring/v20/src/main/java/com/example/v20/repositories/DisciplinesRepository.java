@@ -13,6 +13,6 @@ public interface DisciplinesRepository extends CrudRepository<Disciplines, Integ
     @Query(value = "SELECT * FROM DISCIPLINES WHERE ID = :id", nativeQuery = true)
     Disciplines getById(@Param("id") int id);
 
-    @Query(value = "SELECT * FROM DISCIPLINES WHERE ID = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM DISCIPLINES WHERE NAME = :name", nativeQuery = true)
     Disciplines getByName(@Param("name") String name);
 }
