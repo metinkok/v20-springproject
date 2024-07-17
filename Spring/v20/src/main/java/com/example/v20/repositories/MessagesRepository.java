@@ -22,5 +22,5 @@ public interface MessagesRepository extends CrudRepository<Messages, Integer>{
 
     @Transactional@Modifying
     @Query(value = "INSERT INTO MESSAGES (message, characterId) VALUES (:cities, :characterId)", nativeQuery = true)
-    void insertMessge(@Param("message") String message, @Param("characterId") int characterId);
+    void insertMessage(@Param("message") String message, @Param("characterId") int characterId);
 }
