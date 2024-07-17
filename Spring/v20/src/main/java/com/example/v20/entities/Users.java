@@ -18,8 +18,8 @@ public class Users {
     private String e_mail;
     private String password;
     private int point;
-    private int admn;
-    private int storyteller;
+    private int admn;//1 admin 0 not
+    private int storyteller;//1 story teller 0 not
 
     public Users(){
         id = -1;
