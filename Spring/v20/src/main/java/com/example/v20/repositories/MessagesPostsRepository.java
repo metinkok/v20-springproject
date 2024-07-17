@@ -22,5 +22,5 @@ public interface MessagesPostsRepository extends CrudRepository<MessagesPosts, I
 
     @Transactional@Modifying
     @Query(value = "INSERT INTO MESSAGES_POSTS (messageId, postId) VALUES (:messageId, :postId)", nativeQuery = true)
-    void insertBloodhunt(@Param("messageId") int messageId, @Param("postId") int postId);
+    void insertMessagePost(@Param("messageId") int messageId, @Param("postId") int postId);
 }
