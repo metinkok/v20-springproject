@@ -17,5 +17,5 @@ public interface PostsRepository extends CrudRepository<Posts, Integer>{
 
     @Transactional@Modifying
     @Query(value = "INSERT INTO POSTS (title, post) VALUES (:title, :post)", nativeQuery = true)
-    void insertBloodhunt(@Param("title") String title, @Param("post") String post);
+    void insertPost(@Param("title") String title, @Param("post") String post);
 }
