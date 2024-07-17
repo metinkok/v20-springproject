@@ -39,9 +39,9 @@ public interface UsersRepository extends CrudRepository<Users, Integer>{
 
     @Transactional@Modifying
     @Query(value = "UPDATE USERS SET ADMN = :admin WHERE ID = :id", nativeQuery = true)
-    void giveAdmin(@Param("admin") int admin, @Param("id") int id);
+    void updateAdmin(@Param("admin") int admin, @Param("id") int id);
 
     @Transactional@Modifying
     @Query(value = "UPDATE USERS SET STORYTELLER = :storyteller WHERE ID= :id", nativeQuery = true)
-    void changeStoryteller(@Param("id") int id, @Param("storyteller") int storyteller);
+    void updateStoryteller(@Param("id") int id, @Param("storyteller") int storyteller);
 }
