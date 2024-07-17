@@ -25,5 +25,5 @@ public interface NpcLocationRepository extends CrudRepository<NpcLocation, Integ
 
     @Transactional@Modifying
     @Query(value = "INSERT INTO NPCLOCATION (characterId, locationId) VALUES (:characterId, :locationId)", nativeQuery = true)
-    void insertBloodhunt(@Param("characterId") int characterId, @Param("locationId") int locationId);
+    void insertNpcLocation(@Param("characterId") int characterId, @Param("locationId") int locationId);
 }
