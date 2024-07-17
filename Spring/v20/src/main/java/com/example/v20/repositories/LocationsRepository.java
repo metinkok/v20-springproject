@@ -7,6 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import com.example.v20.entities.Disciplines;
 import com.example.v20.entities.Locations;
 
 @Repository
@@ -14,6 +15,9 @@ public interface LocationsRepository extends CrudRepository<Locations, Integer>{
     
     @Query(value = "SELECT * FROM LOCATIONS WHERE ID = :id", nativeQuery = true)
     Locations getById(@Param("id") int id);
+
+    @Query(value = "SELECT * FROM LOCATIONS WHERE NAME LIKE %:name%", nativeQuery = true)
+    Disciplines getByName(@Param("name") String name);
 
     @Transactional@Modifying
     @Query(value = "INSERT INTO LOCATIONS (name, address) VALUES (:name, :address)", nativeQuery = true)
