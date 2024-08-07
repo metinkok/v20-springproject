@@ -17,43 +17,41 @@ public class Users {
     private String name;
     private String e_mail;
     private String password;
-    private int point;
-    private int admn;//1 admin 0 not
-    private int storyteller;//1 story teller 0 not
+    private int admn;// 1 admin 0 not
+    private int storyteller;// 1 story teller 0 not
 
-    public Users(){
+    public Users() {
         id = -1;
         name = null;
         e_mail = null;
         password = null;
-        point = -1;
         admn = -1;
         storyteller = -1;
     }
-    public Users(int id, String name, String e_mail, String password, int point, int admn, int storyteller){
+
+    public Users(int id, String name, String e_mail, String password, int point, int admn, int storyteller) {
         this.id = id;
         this.name = name;
         this.e_mail = e_mail;
         this.password = password;
-        this.point = point;
         this.admn = admn;
         this.storyteller = storyteller;
     }
-    public Users(String name, String e_posta, String password){
+
+    public Users(String name, String e_posta, String password) {
         id = -1;
         this.name = name;
         this.e_mail = e_posta;
         this.password = password;
-        point = -1;
         admn = -1;
         storyteller = -1;
     }
-    public Users(int id){
+
+    public Users(int id) {
         this.id = id;
         name = null;
         e_mail = null;
         password = null;
-        point = -1;
         admn = -1;
         storyteller = -1;
     }
